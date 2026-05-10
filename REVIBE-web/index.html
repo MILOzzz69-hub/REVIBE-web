@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReVibe | Moda sostenible</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f5f5f0;
+      color:#1e1e1e;
+      overflow-x:hidden;
+    }
+
+    header{
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+      url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 50px;
+      background:rgba(255,255,255,.1);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:white;
+      letter-spacing:1px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    nav a:hover{
+      opacity:.7;
+    }
+
+    .hero-title{
+      font-size:5rem;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    .hero-text{
+      font-size:1.2rem;
+      max-width:700px;
+      line-height:1.7;
+      margin-bottom:30px;
+    }
+
+    .hero-btn{
+      padding:16px 35px;
+      border:none;
+      border-radius:40px;
+      background:#88b18a;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .hero-btn:hover{
+      transform:translateY(-3px);
+      background:#6c946e;
+    }
+
+    section{
+      padding:110px 10%;
+    }
+
+    .section-title{
+      font-size:3rem;
+      margin-bottom:20px;
+      text-align:center;
+    }
+
+    .section-sub{
+      text-align:center;
+      max-width:700px;
+      margin:0 auto 60px;
+      line-height:1.8;
+      color:#555;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      transition:.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      font-size:1.4rem;
+    }
+
+    .price{
+      color:#5c8d5f;
+      font-weight:700;
+      margin-top:15px;
+      font-size:1.1rem;
+    }
+
+    .impact{
+      background:#1e2b22;
+      color:white;
+      border-radius:30px;
+    }
+
+    .impact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+      margin-top:60px;
+    }
+
+    .impact-box{
+      background:rgba(255,255,255,.06);
+      padding:40px;
+      border-radius:25px;
+      text-align:center;
+      backdrop-filter:blur(10px);
+    }
+
+    .impact-box h3{
+      font-size:3rem;
+      margin-bottom:10px;
+      color:#9cd39f;
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:25px;
+      margin-top:60px;
+    }
+
+    .step{
+      background:white;
+      padding:35px 25px;
+      border-radius:25px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,.06);
+    }
+
+    .step-number{
+      width:50px;
+      height:50px;
+      background:#88b18a;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin:0 auto 20px;
+      font-weight:700;
+    }
+
+    .promo{
+      background:linear-gradient(135deg,#6c946e,#314e36);
+      color:white;
+      border-radius:35px;
+      text-align:center;
+      padding:80px 40px;
+    }
+
+    .promo h2{
+      font-size:3rem;
+      margin-bottom:20px;
+    }
+
+    .promo p{
+      font-size:1.1rem;
+      margin-bottom:30px;
+    }
+
+    .promo button{
+      padding:15px 30px;
+      border:none;
+      border-radius:40px;
+      background:white;
+      color:#314e36;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .promo button:hover{
+      transform:scale(1.05);
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    form{
+      max-width:600px;
+      margin:40px auto 0;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    input,textarea{
+      padding:18px;
+      border:none;
+      border-radius:18px;
+      background:white;
+      font-size:1rem;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:none;
+    }
+
+    form button{
+      padding:18px;
+      border:none;
+      border-radius:18px;
+      background:#1e2b22;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    form button:hover{
+      opacity:.9;
+    }
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:40px;
+    }
+
+    @media(max-width:768px){
+      nav{
+        padding:20px;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+
+      .hero-title{
+        font-size:3rem;
+      }
+
+      .section-title{
+        font-size:2.2rem;
+      }
+    }
+  </style></head>
+<body>  <nav>
+    <div class="logo">ReVibe</div><ul>
+  <li><a href="#catalogo">Catálogo</a></li>
+  <li><a href="#proceso">Proceso</a></li>
+  <li><a href="#impacto">Impacto</a></li>
+  <li><a href="#contacto">Contacto</a></li>
+</ul>
+
+  </nav>  <header>
+    <h1 class="hero-title">ReVibe</h1><p class="hero-text">
+  Moda urbana sostenible creada a partir de materiales reciclados.
+  Transformamos residuos textiles en prendas con identidad.
+</p>
+
+<button class="hero-btn" onclick="mensaje()">
+  Dale otra vida a tu estilo
+</button>
+
+  </header>  <section id="catalogo">
+    <h2 class="section-title">Catálogo</h2><p class="section-sub">
+  Diseños minimalistas inspirados en el consumo responsable,
+  la estética urbana y la moda sostenible.
+</p>
+
+<div class="cards">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="card-content">
+      <h3>Playera reciclada</h3>
+      <p>Algodón reciclado con diseño minimalista.</p>
+      <div class="price">$350 MXN</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="card-content">
+      <h3>Sudadera ecológica</h3>
+      <p>Confeccionada con poliéster reutilizado.</p>
+      <div class="price">$600 MXN</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="card-content">
+      <h3>Bolsa reutilizable</h3>
+      <p>Hecha con retazos textiles recuperados.</p>
+      <div class="price">$150 MXN</div>
+    </div>
+  </div>
+
+</div>
+
+  </section>  <section id="proceso">
+    <h2 class="section-title">Proceso Productivo</h2><p class="section-sub">
+  Cada prenda nace a partir de materiales recuperados y pasa por un proceso
+  responsable de transformación.
+</p>
+
+<div class="process">
+
+  <div class="step">
+    <div class="step-number">1</div>
+    <h3>Recolectamos</h3>
+  </div>
+
+  <div class="step">
+    <div class="step-number">2</div>
+    <h3>Clasificamos</h3>
+  </div>
+
+  <div class="step">
+    <div class="step-number">3</div>
+    <h3>Transformamos</h3>
+  </div>
+
+  <div class="step">
+    <div class="step-number">4</div>
+    <h3>Diseñamos</h3>
+  </div>
+
+  <div class="step">
+    <div class="step-number">5</div>
+    <h3>Confeccionamos</h3>
+  </div>
+
+  <div class="step">
+    <div class="step-number">6</div>
+    <h3>Reutilizamos</h3>
+  </div>
+
+</div>
+
+  </section>  <section class="impact" id="impacto"><h2 class="section-title">Impacto Ambiental</h2>
+
+<p class="section-sub">
+  ReVibe busca reducir el desperdicio textil y fomentar una moda más consciente.
+</p>
+
+<div class="impact-grid">
+
+  <div class="impact-box">
+    <h3>+500kg</h3>
+    <p>De residuos textiles reutilizados</p>
+  </div>
+
+  <div class="impact-box">
+    <h3>+1,200</h3>
+    <p>Prendas sostenibles producidas</p>
+  </div>
+
+  <div class="impact-box">
+    <h3>85%</h3>
+    <p>De materiales reciclados utilizados</p>
+  </div>
+
+</div>
+
+  </section>  <section>
+    <div class="promo">
+      <h2>10% OFF</h2><p>
+    Obtén descuento en tu primera compra y únete al movimiento sostenible.
+  </p>
+
+  <button onclick="promo()">Obtener promoción</button>
+</div>
+
+  </section>  <section class="contact" id="contacto"><h2 class="section-title">Contacto</h2>
+
+<p class="section-sub">
+  ¿Interesado en moda sostenible? Contáctanos.
+</p>
+
+<form>
+  <input type="text" placeholder="Nombre">
+  <input type="email" placeholder="Correo electrónico">
+  <textarea placeholder="Escribe tu mensaje..."></textarea>
+  <button type="submit">Enviar mensaje</button>
+</form>
+
+  </section>  <footer>
+    <p>© 2026 ReVibe — Moda sostenible con identidad.</p>
+  </footer>  <script>
+
+    function mensaje(){
+      alert('Bienvenido a ReVibe 🌱');
+    }
+
+    function promo(){
+      alert('Tu código de descuento es: REVIBE10');
+    }
+
+  </script></body>
+</html>
