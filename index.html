@@ -14,7 +14,7 @@
 
     body{
       font-family:'Inter',sans-serif;
-      background:#f5f5f0;
+      background:#ece7df;
       color:#1e1e1e;
       overflow-x:hidden;
     }
@@ -188,7 +188,7 @@ nav a:hover{
 }
 
 .impact-description{
-  color:#c7c7c7;
+  color:#e8e8e8;
   line-height:2;
   font-size:1.1rem;
 }
@@ -222,7 +222,7 @@ nav a:hover{
 
 .stat-card p{
   line-height:1.8;
-  color:#d6d6d6;
+  color:#efefef;
 }
 
     .impact-grid{
@@ -463,6 +463,16 @@ nav a:hover{
   left:0;
   color:#d8f0d8;
 }
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:all 1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
     @media(max-width:768px){
       nav{
         padding:20px;
@@ -500,7 +510,7 @@ nav a:hover{
 <button class="hero-btn" onclick="mensaje()">
   Dale otra vida a tu estilo
 </button>
-<section class="vision">
+<section class="vision reveal">
 
   <div class="vision-content">
 
@@ -523,7 +533,7 @@ nav a:hover{
   </div>
 
 </section>
-  </header>  <section id="catalogo">
+  </header>  <section class="reveal" id="catalogo">
     <h2 class="section-title">Catálogo</h2><p class="section-sub">
   Diseños minimalistas inspirados en el consumo responsable,
   la estética urbana y la moda sostenible.
@@ -563,7 +573,7 @@ nav a:hover{
 
 </div>
 
-  </section>  <section id="proceso">
+  </section>  <section class="reveal" id="proceso">
     <h2 class="section-title">Proceso Productivo</h2><p class="section-sub">
   Cada prenda nace a partir de materiales recuperados y pasa por un proceso
   responsable de transformación.
@@ -603,7 +613,7 @@ nav a:hover{
 
 </div>
 
-  <section class="impact" id="impacto">
+  <section class="impact reveal" id="impacto">
 
   <div class="impact-header">
 
@@ -666,7 +676,7 @@ nav a:hover{
 
   <button onclick="promo()">Obtener promoción</button>
 </div>
-<section class="comparison">
+<section class="comparison reveal">
 
   <div class="comparison-header">
 
@@ -718,7 +728,7 @@ nav a:hover{
   </div>
 
 </section>
-  </section>  <section class="contact" id="contacto"><h2 class="section-title">Contacto</h2>
+  </section>  <section class="contact reveal" id="contacto"><h2 class="section-title">Contacto</h2>
 
 <p class="section-sub">
   ¿Interesado en moda sostenible? Contáctanos.
@@ -742,6 +752,21 @@ nav a:hover{
     function promo(){
       alert('Tu código de descuento es: REVIBE10');
     }
+const reveals = document.querySelectorAll('.reveal');
 
+window.addEventListener('scroll', () => {
+
+  reveals.forEach(reveal => {
+
+    const windowHeight = window.innerHeight;
+    const revealTop = reveal.getBoundingClientRect().top;
+
+    if(revealTop < windowHeight - 100){
+      reveal.classList.add('active');
+    }
+
+  });
+
+});
   </script></body>
 </html>
