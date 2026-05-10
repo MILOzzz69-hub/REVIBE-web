@@ -383,6 +383,86 @@ nav a:hover{
   line-height:2;
   color:#4f4f4f;
 }
+.comparison{
+  padding:140px 10%;
+  background:#f3f1ea;
+}
+
+.comparison-header{
+  text-align:center;
+  max-width:850px;
+  margin:auto;
+}
+
+.comparison-mini{
+  letter-spacing:4px;
+  color:#6c946e;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.comparison-header h2{
+  font-size:3.5rem;
+  margin-bottom:25px;
+  color:#1d2a20;
+}
+
+.comparison-description{
+  color:#555;
+  line-height:2;
+  font-size:1.1rem;
+}
+
+.comparison-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
+  margin-top:80px;
+}
+
+.comparison-card{
+  padding:50px 40px;
+  border-radius:30px;
+  transition:.4s;
+}
+
+.comparison-card:hover{
+  transform:translateY(-10px);
+}
+
+.bad{
+  background:#1d1d1d;
+  color:white;
+}
+
+.good{
+  background:#6c946e;
+  color:white;
+}
+
+.comparison-card h3{
+  font-size:2rem;
+  margin-bottom:30px;
+}
+
+.comparison-card ul{
+  list-style:none;
+}
+
+.comparison-card li{
+  margin-bottom:20px;
+  line-height:1.8;
+  font-size:1.05rem;
+  position:relative;
+  padding-left:25px;
+}
+
+.comparison-card li::before{
+  content:'•';
+  position:absolute;
+  left:0;
+  color:#d8f0d8;
+}
     @media(max-width:768px){
       nav{
         padding:20px;
@@ -452,7 +532,7 @@ nav a:hover{
 <div class="cards">
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+    <img src="playera.jpg">
 
     <div class="card-content">
       <h3>Playera reciclada</h3>
@@ -462,7 +542,7 @@ nav a:hover{
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop">
+    <img src="sudadera.jpg">
 
     <div class="card-content">
       <h3>Sudadera ecológica</h3>
@@ -472,7 +552,7 @@ nav a:hover{
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+    <img src="bolsa.jpg">
 
     <div class="card-content">
       <h3>Bolsa reutilizable</h3>
@@ -586,7 +666,58 @@ nav a:hover{
 
   <button onclick="promo()">Obtener promoción</button>
 </div>
+<section class="comparison">
 
+  <div class="comparison-header">
+
+    <p class="comparison-mini">
+      MODA CONSCIENTE
+    </p>
+
+    <h2>
+      Fast Fashion vs ReVibe
+    </h2>
+
+    <p class="comparison-description">
+      Creemos en una industria textil más responsable,
+      enfocada en durabilidad, reutilización y consumo consciente.
+    </p>
+
+  </div>
+
+  <div class="comparison-grid">
+
+    <div class="comparison-card bad">
+
+      <h3>Fast Fashion</h3>
+
+      <ul>
+        <li>Producción masiva</li>
+        <li>Alta contaminación</li>
+        <li>Consumo desechable</li>
+        <li>Materiales de baja duración</li>
+        <li>Impacto ambiental elevado</li>
+      </ul>
+
+    </div>
+
+    <div class="comparison-card good">
+
+      <h3>ReVibe</h3>
+
+      <ul>
+        <li>Producción consciente</li>
+        <li>Economía circular</li>
+        <li>Materiales reciclados</li>
+        <li>Diseño sostenible</li>
+        <li>Moda con propósito</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
   </section>  <section class="contact" id="contacto"><h2 class="section-title">Contacto</h2>
 
 <p class="section-sub">
